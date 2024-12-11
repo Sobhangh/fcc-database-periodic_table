@@ -18,10 +18,13 @@ else
       fi
     fi
   fi
-  echo $RESULT
+  #echo $RESULT
   IFS='|' read -r at_nb symb name <<< "$RESULT"
+
   RESULT=$($PSQL "SELECT * FROM properties WHERE atomic_number=$at_nb")
   IFS='|' read -r at_nb2 at_mass melt boil type_id <<< "$RESULT"
+  
   TYPE=$($PSQL "SELECT type FROM types WHERE type_id=$type_id")
+  
   echo "The element with the atomic number $at_nb is $name ($symb). It's a $TYPE, with a mass of $at_mass amu. $name has a melting point of $melt celsius and a boiling point of $boil celsius."
 fi
