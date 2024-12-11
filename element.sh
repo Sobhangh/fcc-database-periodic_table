@@ -4,7 +4,7 @@ if [[ $# -eq 0 ]]
 then
   echo Please provide an element as an argument.
 else
-  RESULT=$($PSQL "SELECT * FROM elements WHERE atomic_number=$1")
+  RESULT=$($PSQL "SELECT * FROM elements WHERE atomic_number=$1" 2> /dev/null) 
   if [[ -z $RESULT ]]
   then 
     RESULT=$($PSQL "SELECT * FROM elements WHERE symbol='$1'")
