@@ -26,5 +26,6 @@ else
   
   TYPE=$($PSQL "SELECT type FROM types WHERE type_id=$type_id")
   
-  echo "The element with the atomic number $at_nb is $name ($symb). It's a $TYPE, with a mass of $at_mass amu. $name has a melting point of $melt celsius and a boiling point of $boil celsius."
+  #echo "The element with atomic number 1 is Hydrogen (H). It's a nonmetal, with a mass of 1.008 amu. Hydrogen has a melting point of -259.1 celsius and a boiling point of -252.9 celsius."
+  echo "The element with atomic number $at_nb is $name ($symb). It's a $TYPE, with a mass of $at_mass amu. $name has a melting point of $melt celsius and a boiling point of $boil celsius."
 fi
